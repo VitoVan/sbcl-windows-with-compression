@@ -24,7 +24,6 @@ jobs:
         release: true
         update: false
         install: >-
-          unzip
           p7zip
           mingw-w64-x86_64-gcc
           mingw-w64-x86_64-zstd
@@ -44,7 +43,7 @@ jobs:
 
     - name: zip output
       run: |
-        7z a -t7z -mx=9 -mfb=273 -ms -md=32m -myx=9 -mtm=- -mmt -mmtf -mmf=bt3 -mmc=10000 -mpb=0 -mlc=0 sbcl-2.2.9-pre-made.7z sbcl-2.2.9
+        7z a sbcl-2.2.9-pre-made.7z sbcl-2.2.9
 
     - name: make installer
       run: |
